@@ -1,0 +1,113 @@
+---
+layout: default
+---
+<div class="prompt">
+  <h1>{{ page.title }}</h1>
+  
+  <div class="prompt-metadata">
+    <p><strong>작성일:</strong> {{ page.date | date: "%Y-%m-%d" }}</p>
+    <p><strong>버전:</strong> {{ page.version }}</p>
+    <p><strong>목적:</strong> {{ page.purpose }}</p>
+    <p><strong>대상 모델:</strong> {{ page.model }}</p>
+    
+    <div class="tags">
+      {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" class="tag">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <h2>프롬프트 전문</h2>
+  <div class="prompt-content">
+    {{ page.prompt_text | markdownify }}
+  </div>
+
+  <h2>프롬프트 구조 분석</h2>
+  <h3>구성 요소</h3>
+  <ul>
+    <li><strong>시스템 지시사항:</strong> {{ page.system_instruction }}</li>
+    <li><strong>역할 정의:</strong> {{ page.role_definition }}</li>
+    <li><strong>제약 조건:</strong> {{ page.constraints }}</li>
+    <li><strong>출력 형식:</strong> {{ page.output_format }}</li>
+    <li><strong>예시:</strong> {{ page.examples }}</li>
+  </ul>
+
+  <h3>프롬프트 기법</h3>
+  <ul>
+    <li><strong>사용된 기법:</strong> {{ page.techniques }}</li>
+    <li><strong>특별 구문:</strong> {{ page.special_syntax }}</li>
+  </ul>
+
+  <h2>성능 평가</h2>
+  <table>
+    <tr>
+      <th>평가 기준</th>
+      <th>점수 (1-5)</th>
+      <th>코멘트</th>
+    </tr>
+    {% for metric in page.performance %}
+    <tr>
+      <td>{{ metric.name }}</td>
+      <td>{{ metric.score }}</td>
+      <td>{{ metric.comment }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>개선 이력</h2>
+  <table>
+    <tr>
+      <th>날짜</th>
+      <th>버전</th>
+      <th>변경 사항</th>
+      <th>변경 이유</th>
+    </tr>
+    {% for history in page.history %}
+    <tr>
+      <td>{{ history.date }}</td>
+      <td>{{ history.version }}</td>
+      <td>{{ history.changes }}</td>
+      <td>{{ history.reason }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>사용 사례 및 결과</h2>
+  {% for case in page.use_cases %}
+  <div class="use-case">
+    <h3>사용 사례 {{ forloop.index }}</h3>
+    <p><strong>날짜:</strong> {{ case.date }}</p>
+    <p><strong>상황:</strong> {{ case.situation }}</p>
+    <p><strong>결과:</strong> {{ case.result }}</p>
+    <p><strong>개선점:</strong> {{ case.improvements }}</p>
+  </div>
+  {% endfor %}
+
+  <h2>관련 프롬프트</h2>
+  <table>
+    <tr>
+      <th>관련 프롬프트</th>
+      <th>관계 유형</th>
+      <th>설명</th>
+    </tr>
+    {% for relation in page.related_prompts %}
+    <tr>
+      <td><a href="{{ site.baseurl }}/prompts/{{ relation.id }}">{{ relation.name }}</a></td>
+      <td>{{ relation.type }}</td>
+      <td>{{ relation.description }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h2>참고 자료</h2>
+  <ul>
+    {% for reference in page.references %}
+    <li><a href="{{ reference.url }}" target="_blank">{{ reference.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>메모 및 기타 사항</h2>
+  <div class="notes">
+    {{ page.notes | markdownify }}
+  </div>
+</div>
