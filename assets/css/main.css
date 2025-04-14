@@ -1,17 +1,31 @@
-/* 변수 정의 - 민트 컬러 테마 */
+/* 변수 정의 - 다채로운 민트 컬러 테마 */
 :root {
-  --mint-primary: #3EB489;  /* 프라이머리 민트 */
-  --mint-secondary: #A7E9AF; /* 밝은 민트 */
-  --mint-tertiary: #43BF9B; /* 약간 더 진한 민트 */
-  --mint-dark: #2A8C6A;     /* 어두운 민트 */
-  --mint-light: #E0F5EE;    /* 매우 밝은 민트 */
-  --text-dark: #2C3E50;     /* 텍스트 색상 */
-  --text-light: #FFFFFF;    /* 밝은 텍스트 */
-  --text-muted: #7F8C8D;    /* 희미한 텍스트 */
-  --border-color: #E0E0E0;  /* 경계선 색상 */
-  --background: #F9FFFD;    /* 배경색 */
-}
+  
+  --mint-primary: #00BFA6;     /* 밝고 선명한 민트 */
+  --mint-secondary: #7DECD3;   /* 파스텔 민트 */
+  --mint-tertiary: #33D6B5;    /* 중간 톤 민트 */
+  --mint-dark: #00A896;        /* 깊은 민트 */
+  --mint-light: #E0FFFA;        /* 매우 밝은 민트 */
 
+
+  /* 보조 컬러 - 다채로운 악센트 */
+  --accent-coral: #FF7676;     /* 산호색 악센트 */
+  --accent-lavender: #B2A6FF;  /* 라벤더 악센트 */
+  --accent-yellow: #FFE66D;    /* 옐로우 악센트 */
+  --accent-peach: #FFBEAC;     /* 복숭아 악센트 */
+  
+  /* 텍스트 및 배경 */
+  --text-dark: #1A3653;        /* 진한 네이비 텍스트 */
+  --text-light: #FFFFFF;       /* 밝은 텍스트 */
+  --text-muted: #8DA5BA;       /* 소프트 블루 그레이 */
+  --border-color: #E5F0F5;     /* 밝은 경계선 */
+  --background: #FBFDFF;       /* 미세한 블루 톤 배경 */
+  
+  /* 그라데이션 */
+  --gradient-mint: linear-gradient(135deg, var(--mint-primary), var(--mint-secondary));
+  --gradient-sunset: linear-gradient(135deg, var(--accent-coral), var(--accent-peach));
+  --gradient-dream: linear-gradient(135deg, var(--mint-tertiary), var(--accent-lavender));
+}
 /* 기본 스타일 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

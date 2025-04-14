@@ -1,0 +1,14 @@
+<!-- _layouts/post.html -->
+---
+layout: default
+---
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-meta">
+    <span>작성자: {{ page.author }}</span>
+    <span>작성일: {{ page.date | date: "%Y-%m-%d" }}</span>
+  </div>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

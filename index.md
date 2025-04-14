@@ -10,7 +10,8 @@ title: 홈
       <p class="subtitle">AI 프롬프트를 체계적으로 관리하고 검색하는 지식 저장소</p>
       <div class="hero-buttons">
         <a href="{{ '/search/' | relative_url }}" class="btn btn-primary">프롬프트 검색</a>
-        <a href="#features" class="btn btn-secondary">주요 기능 보기</a>
+        <a href="{{ '/admin/' | relative_url }}" class="btn btn-secondary">프롬프트 작성</a>
+        <a href="#features" class="btn btn-primary">주요 기능 보기</a>
       </div>
     </div>
   </section>

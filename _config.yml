@@ -77,3 +77,9 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+
+# Markdown Editor  설정
+editor: 
+  enabled: true
+  auth_required: true
+  
